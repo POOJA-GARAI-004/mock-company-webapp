@@ -1,49 +1,29 @@
-pipeline {
-    agent any
-
-    tools {
-        // Use the configured JDK name
-        jdk 'JDK11'
+node {
+    stage('Preparation') {
+        // Get some code from your forked GitHub repository
+        checkout([$class: 'GitSCM', 
+                  branches: [[name: '*/main']], 
+                  userRemoteConfigs: [[url: 'https://github.com/your-username/mock-company-webapp.git', 
+                                      credentialsId: 'YOUR_CREDENTIALS_ID']]])
     }
-
-    stages {
-        stage('Checkout') {
-            steps {
-                // Checkout the repository
-                checkout scm
-            }
-        }
-
-        stage('Build') {
-            steps {
-                // Run the Gradle build
-                bat './gradlew.bat assemble'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                // Run the Gradle tests
-                bat './gradlew.bat test'
-            }
+    stage('Build') {
+        // Run the Gradle build
+        if (isUnix()) {
+            sh './gradlew assemble'
+        } else {
+            bat 'gradlew.bat assemble'
         }
     }
-
-    post {
-        always {
-            // Archive the build artifacts
-            archiveArtifacts artifacts: '**/build/libs/*.jar', allowEmptyArchive: true
-            
-            // Archive the test results
-            junit 'build/test-results/test/*.xml'
+    stage('Test') {
+        // Run the Gradle tests
+        if (isUnix()) {
+            sh './gradlew test'
+        } else {
+            bat 'gradlew.bat test'
         }
-
-        success {
-            echo 'Build and tests succeeded!'
-        }
-
-        failure {
-            echo 'Build or tests failed.'
-        }
+    }
+    stage('Results') {
+        junit '**/build/test-results/test/*.xml'
+        archiveArtifacts 'build/libs/*.jar'
     }
 }
