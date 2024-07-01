@@ -1,0 +1,49 @@
+pipeline {
+    agent any
+
+    tools {
+        // Install the JDK
+        jdk 'JDK 11'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout the repository
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                // Run the Gradle build
+                bat './gradlew.bat assemble'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                // Run the Gradle tests
+                bat './gradlew.bat test'
+            }
+        }
+    }
+
+    post {
+        always {
+            // Archive the build artifacts
+            archiveArtifacts artifacts: '**/build/libs/*.jar', allowEmptyArchive: true
+            
+            // Archive the test results
+            junit 'build/test-results/test/*.xml'
+        }
+
+        success {
+            echo 'Build and tests succeeded!'
+        }
+
+        failure {
+            echo 'Build or tests failed.'
+        }
+    }
+}
