@@ -3,7 +3,7 @@ node {
         // Get some code from your forked GitHub repository
         checkout([$class: 'GitSCM', 
                   branches: [[name: '*/main']], 
-                  userRemoteConfigs: [[url: 'https://github.com/your-username/mock-company-webapp.git', 
+                  userRemoteConfigs: [[url: 'https://github.com/POOJA-GARAI-004/mock-company-webapp.git', 
                                       credentialsId: 'YOUR_CREDENTIALS_ID']]])
     }
     stage('Build') {
