@@ -4,34 +4,27 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building the application...'
-                sh './gradlew build'
+                bat 'gradlew.bat build'  
             }
         }
-
         stage('Test') {
             steps {
-                echo 'Running tests...'
-                sh './gradlew test'
+                // Example test step
+                bat 'gradlew.bat test'  
             }
         }
-
         stage('Deploy') {
             steps {
-                echo 'Deploying the application...'
+                // Example deploy step
+                echo 'Deploying...'
             }
         }
     }
 
     post {
         always {
-            echo 'Pipeline finished.'
-        }
-        success {
-            echo 'Pipeline succeeded.'
-        }
-        failure {
-            echo 'Pipeline failed.'
+            // Example post-action step
+            echo 'This will always run'
         }
     }
 }
