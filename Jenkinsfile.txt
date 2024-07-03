@@ -1,29 +1,37 @@
-node {
-    stage('Preparation') {
-        // Get some code from your forked GitHub repository
-        checkout([$class: 'GitSCM', 
-                  branches: [[name: '*/main']], 
-                  userRemoteConfigs: [[url: 'https://github.com/POOJA-GARAI-004/mock-company-webapp.git', 
-                                      credentialsId: 'YOUR_CREDENTIALS_ID']]])
-    }
-    stage('Build') {
-        // Run the Gradle build
-        if (isUnix()) {
-            sh './gradlew assemble'
-        } else {
-            bat 'gradlew.bat assemble'
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building the application...'
+                sh './gradlew build'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+                sh './gradlew test'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying the application...'
+            }
         }
     }
-    stage('Test') {
-        // Run the Gradle tests
-        if (isUnix()) {
-            sh './gradlew test'
-        } else {
-            bat 'gradlew.bat test'
+
+    post {
+        always {
+            echo 'Pipeline finished.'
         }
-    }
-    stage('Results') {
-        junit '**/build/test-results/test/*.xml'
-        archiveArtifacts 'build/libs/*.jar'
+        success {
+            echo 'Pipeline succeeded.'
+        }
+        failure {
+            echo 'Pipeline failed.'
+        }
     }
 }
