@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EmpDetailPage"
+    android:background="@drawable/purplebackground"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/emp_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Details"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:layout_gravity="center"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:src="@drawable/img_avatar"/>
+
+    <TextView
+        android:id="@+id/Empname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name:"
+        android:textSize="30sp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/white"/>
+    <TextView
+        android:id="@+id/Empemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email:"
+        android:textSize="30sp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/white"/>
+    <TextView
+        android:id="@+id/Empqulif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Qualification:"
+        android:textSize="30sp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/white"/>
+    <TextView
+        android:id="@+id/EmpTechs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Technical Skills:"
+        android:textSize="30sp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/white"/>
+    <TextView
+        android:id="@+id/EmpExp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Experience:"
+        android:textSize="30sp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/white"/>
+
+
+</LinearLayout>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/purplebackground"
+    android:orientation="vertical"
+    tools:context=".empinfo">
+
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/tv_displayemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="EMAIL"
+        android:textColor="@color/white"
+        android:textSize="20sp"/>
+    <TextView
+        android:layout_below="@id/tv_displayemail"
+        android:id="@+id/tv_displayuser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="USER"
+        android:textColor="@color/white"
+        android:textSize="20sp"/>
+    <TextView
+        android:layout_below="@id/tv_displayuser"
+        android:id="@+id/tv_displaypass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="PASS"
+        android:textColor="@color/white"
+        android:textSize="20sp"/>
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="Name:">
+
+    </TextView>
+    <EditText
+        android:hint="Firstname            Middlename           Surname"
+        android:id="@+id/edt_name"
+        android:backgroundTint="@color/white"
+        android:layout_below="@id/tv_displaypass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textColorHint="@color/gray">
+    </EditText>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="Qualififaction:">
+
+    </TextView>
+   <Spinner
+       android:id="@+id/spin_Qualif"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:backgroundTint="@color/white"
+       />
+
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="Technical skills:">
+
+    </TextView>
+    <EditText
+        android:id="@+id/edt_techs"
+        android:backgroundTint="@color/white"
+        android:layout_below="@id/tv_displaypass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white">
+    </EditText>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="Experience:">
+
+    </TextView>
+    <EditText
+        android:id="@+id/edt_exp"
+        android:backgroundTint="@color/white"
+        android:layout_below="@id/tv_displaypass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:hint="In Years:"
+        android:textColorHint="@color/gray">
+    </EditText>
+
+    <Button
+        android:id="@+id/submit_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/design_default_color_secondary"
+        android:layout_gravity="center"
+        android:text="SUBMIT">
+
+    </Button>
+
+
+</LinearLayout>

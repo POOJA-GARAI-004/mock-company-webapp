@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EmpDetailPage"
+    android:background="@drawable/purplebackground"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/emp_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Company Details"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:layout_gravity="center" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:src="@drawable/compony_logo" />
+
+
+
+    <TextView
+        android:id="@+id/Compname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Company:"
+        android:textSize="30sp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/white"/>
+    <TextView
+        android:id="@+id/HRname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hr:"
+        android:textSize="30sp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/white"/>
+    <TextView
+        android:id="@+id/HRemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email:"
+        android:textSize="30sp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/white"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Requirements"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:textSize="30sp"/>
+    <TextView
+        android:id="@+id/HRqulif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Qualification:"
+        android:textSize="30sp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/white"/>
+    <TextView
+        android:id="@+id/HRTechs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Technical Skills:"
+        android:textSize="30sp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/white"/>
+    <TextView
+        android:id="@+id/HRExp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Experience:"
+        android:textSize="30sp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/white"/>
+
+
+</LinearLayout>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">test 1.1</string>
+    <string-array name="qualif">
+        <item>10th +</item>
+        <item>12th +</item>
+        <item>undergraduate</item>
+        <item>graduate</item>
+        <item>postgraduate</item>
+    </string-array>
+</resources>
